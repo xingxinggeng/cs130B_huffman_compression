@@ -1,1 +1,1 @@
-# cs130B_proj1
+Xingxing Geng : xingxinggeng@umail.ucsb.edu
