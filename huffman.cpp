@@ -36,7 +36,12 @@ void printHuffmanCode(Node* root,string wordCode,ofstream& outfile,int& compress
         if( !root ) 
 				return;
         if(root->character != int('#') ){
-				outfile<<root->character<<"    "<<wordCode<<endl;
+				char buffer[100];
+				sprintf(buffer, "%-5d \t %s", root->character, wordCode.c_str());
+			//	sprintf(buffer, "%-5d \t %c \t %s", root->character,char( root->character), wordCode.c_str());
+				outfile << buffer << endl;
+				//outfile<<("%-5d\t%s \n",root->character, wordCode);	
+				//outfile<<root->character<<"    "<<wordCode<<endl;
 				compressionSize += root->frequency * wordCode.length();
         }
 
@@ -49,7 +54,7 @@ void constructHuffmanCode(vector<int> data,vector<int> freq, int size){
 		struct Node *lt, *rt, *top;
 		int compressionSize = 0;
 		ofstream out;
-		out.open("wordcodes.txt");
+		out.open("codewords.txt");
 		std::priority_queue<Node*,vector<Node*>,compare> minHeap;
 
 		for(int i = 0; i<size; i++){
