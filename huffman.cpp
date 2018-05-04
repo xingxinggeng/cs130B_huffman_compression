@@ -3,6 +3,7 @@
 //2.set the format of the string in the output file
 
 #include <iostream>
+#include <iterator>
 #include <string>
 #include <fstream>
 #include <cstdlib>
