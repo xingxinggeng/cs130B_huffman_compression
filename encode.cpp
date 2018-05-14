@@ -67,7 +67,7 @@ int main(int argc, char *argv[]){
 		string output_string = "";
 		double stringLength  = binaryString.length();
 		int i ;
-		for( i = 0; stringLength > 8 ; i++){
+		for( i = 0; stringLength > (binaryString.length() % 8) ; i++){
 				if( !(((i+1)%8) == 0 )){
 						byteString += binaryString[i];
 						stringLength --;
